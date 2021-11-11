@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const pacienteController = require('../controllers/pacienteController');
+const reservaLocalController = require('../controllers/reservalocalCntroller')
 
 module.exports = function() {
+    // rutas para manipolar pacientes 
+
 
     // Agrega nuevos pacientes via POST
     router.post('/pacientes', 
@@ -29,6 +32,19 @@ module.exports = function() {
      router.delete('/pacientes/:id',
      pacienteController.eliminarPaciente
  );
+
+
+
+ // ruatas para el controller de reserva de un local 
+  router.post('/nuevareserva',
+  reservaLocalController.nuevaReservaLocal
+  );
+
+  // obtener todas las reservas 
+
+  router.get('/nuevareserva',
+  reservaLocalController.obtenerReservaLocal
+  );
 
     return router;
 }

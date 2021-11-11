@@ -44,6 +44,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // habilitar routing
  app.use('/', routes());
+
     
     // puerto y arranco el servidor 
     app.listen(4000, () => {
